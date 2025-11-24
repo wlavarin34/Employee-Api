@@ -1,161 +1,146 @@
-📘 Employee Directory API
+Employee API
 
-A simple and scalable REST API for managing employees, departments, and organizational data.
-Built with Node.js, Express/Nest (whichever you're using), and PostgreSQL.
+A simple RESTful API for managing employees and departments.
+Built with Node.js, TypeScript, and PostgreSQL.
 
-🚀 Features
+Features
 
-Create, read, update, and delete employees
+CRUD operations for employees
 
-Department management
+CRUD operations for departments
 
-Search and filter employees
+Basic filtering and querying
 
-PostgreSQL database
+Structured project layout
 
-Follows REST API best practices
+Ready for interview demos and extensions
 
-Environment-based configuration
-
-Production-ready project structure
-
-📦 Tech Stack
+Tech Stack
 
 Node.js
 
 Express or NestJS
 
-PostgreSQL
-
-Prisma / Sequelize / Knex (whichever you used)
-
 TypeScript
 
-📁 Project Structure
-employee-directory-api/
-│── src/
-│   ├── modules/
-│   │   ├── employees/
-│   │   ├── departments/
-│   ├── config/
-│   ├── database/
-│   ├── main.ts / app.js
-│── tests/
-│── .env
-│── .gitignore
-│── package.json
-│── README.md
+PostgreSQL
 
-⚙️ Installation
-1️⃣ Clone the Repo
-git clone https://github.com/YOUR_USERNAME/employee-directory-api.git
-cd employee-directory-api
+Project Structure
+src/
+  controllers/
+  routes/
+  services/
+  models/
+  config/
+tests/
+.env
+package.json
+tsconfig.json
+README.md
 
-2️⃣ Install Dependencies
+
+(Your structure can differ a bit; this is just a reference.)
+
+Getting Started
+1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/Employee-Api.git
+cd Employee-Api
+
+2. Install dependencies
 npm install
 
-3️⃣ Setup Environment Variables
+3. Environment variables
 
-Create a .env file:
+Create a .env file in the root:
 
 PORT=5000
-DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/employees_db
-JWT_SECRET=your-secret
+DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/employee_db
 
-🗄️ Database Setup
+
+Update DATABASE_URL to match your local setup.
+
+Database Setup (PostgreSQL)
+
 Create the database:
-createdb employees_db
+
+createdb employee_db
 
 
-If using Prisma:
+Run your migrations or schema setup (Prisma/Sequelize/Knex/etc.), for example:
 
+# Example (Prisma)
 npx prisma migrate dev
 
-
-If using Sequelize:
-
-npx sequelize db:migrate
-
-▶️ Run the Server
-Development:
+Running the API
+Development
 npm run dev
 
-Production:
+Production
 npm run build
 npm start
 
-📚 API Endpoints
-👤 Employees
+
+The API will usually be available at:
+
+http://localhost:5000
+
+API Endpoints
+Employees
 GET /employees
 
-Get all employees
+Return all employees.
 
 GET /employees/:id
 
-Get a single employee
+Return a single employee by ID.
 
 POST /employees
 
-Create an employee
-Body:
+Create a new employee.
+
+Request body example:
 
 {
   "name": "John Doe",
   "email": "john@example.com",
-  "departmentId": 1,
-  "role": "Software Engineer"
+  "role": "Software Engineer",
+  "departmentId": 1
 }
 
 PATCH /employees/:id
 
-Update employee info
+Update an employee.
 
 DELETE /employees/:id
 
-Remove an employee
+Delete an employee.
 
-🏢 Departments
+Departments
 GET /departments
 
-Get all departments
+Return all departments.
+
+GET /departments/:id
+
+Return a department by ID.
 
 POST /departments
 
-Create a department
-Body:
+Create a department.
+
+Request body example:
 
 {
   "name": "Engineering"
 }
 
-GET /departments/:id
-
-Get a department by ID
-
 DELETE /departments/:id
 
-Delete a department
+Delete a department.
 
-🔍 Search Example
-GET /employees?search=john&department=engineering
-🧪 Running Tests
+Testing
 npm test
 
-🐳 Docker (Optional)
+License
 
-Build container:
-
-docker build -t employee-api .
-
-
-Run:
-
-docker run -p 5000:5000 employee-api
-
-📄 License
-
-MIT License
-
-🤝 Contributing
-
-Pull requests are welcome!
+This project is for educational and interview purposes.
