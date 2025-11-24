@@ -1,146 +1,77 @@
-Employee API
+# Employee API
 
-A simple RESTful API for managing employees and departments.
-Built with Node.js, TypeScript, and PostgreSQL.
+Employee API is a Node.js and PostgreSQL service for managing employees
+and departments.
 
-Features
+## Installation
 
-CRUD operations for employees
+Use the package manager [npm](https://www.npmjs.com/) to install
+dependencies.
 
-CRUD operations for departments
-
-Basic filtering and querying
-
-Structured project layout
-
-Ready for interview demos and extensions
-
-Tech Stack
-
-Node.js
-
-Express or NestJS
-
-TypeScript
-
-PostgreSQL
-
-Project Structure
-src/
-  controllers/
-  routes/
-  services/
-  models/
-  config/
-tests/
-.env
-package.json
-tsconfig.json
-README.md
-
-
-(Your structure can differ a bit; this is just a reference.)
-
-Getting Started
-1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/Employee-Api.git
-cd Employee-Api
-
-2. Install dependencies
+``` bash
 npm install
+```
 
-3. Environment variables
+## Usage
 
-Create a .env file in the root:
+Start the development server:
 
-PORT=5000
-DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/employee_db
-
-
-Update DATABASE_URL to match your local setup.
-
-Database Setup (PostgreSQL)
-
-Create the database:
-
-createdb employee_db
-
-
-Run your migrations or schema setup (Prisma/Sequelize/Knex/etc.), for example:
-
-# Example (Prisma)
-npx prisma migrate dev
-
-Running the API
-Development
+``` bash
 npm run dev
+```
 
-Production
-npm run build
-npm start
+Example API requests:
 
-
-The API will usually be available at:
-
-http://localhost:5000
-
-API Endpoints
-Employees
+``` bash
+# Get all employees
 GET /employees
 
-Return all employees.
-
+# Get one employee
 GET /employees/:id
 
-Return a single employee by ID.
-
+# Create an employee
 POST /employees
-
-Create a new employee.
-
-Request body example:
-
 {
   "name": "John Doe",
   "email": "john@example.com",
-  "role": "Software Engineer",
-  "departmentId": 1
+  "departmentId": 1,
+  "role": "Software Engineer"
 }
 
+# Update an employee
 PATCH /employees/:id
 
-Update an employee.
-
+# Delete an employee
 DELETE /employees/:id
+```
 
-Delete an employee.
+Department routes:
 
-Departments
+``` bash
+# Get all departments
 GET /departments
 
-Return all departments.
-
-GET /departments/:id
-
-Return a department by ID.
-
+# Create a department
 POST /departments
-
-Create a department.
-
-Request body example:
-
 {
   "name": "Engineering"
 }
 
+# Get department by ID
+GET /departments/:id
+
+# Delete a department
 DELETE /departments/:id
+```
 
-Delete a department.
+## Contributing
 
-Testing
-npm test
+Pull requests are welcome.\
+For major changes, please open an issue first to discuss what you would
+like to change.
 
-License
+Please make sure to update tests as appropriate.
 
-This project is for educational and interview purposes.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
