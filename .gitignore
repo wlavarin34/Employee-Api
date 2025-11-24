@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*        # .env.development, .env.production, etc.
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+.tmp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage (Jest or other test frameworks)
+coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# Local data/output (if your API writes temp files)
+tmp/
+data/
+uploads/
+
+# Cache
+.cache/
+.eslintcache
+
